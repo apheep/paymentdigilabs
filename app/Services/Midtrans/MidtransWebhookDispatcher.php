@@ -205,7 +205,7 @@ class MidtransWebhookDispatcher
 
         return is_string($url)
             && filter_var($url, FILTER_VALIDATE_URL) !== false
-            && Str::startsWith($url, 'https://')
+            && Str::startsWith($url, ['http://', 'https://'])
             && is_string($apiKey)
             && $apiKey !== '';
     }
